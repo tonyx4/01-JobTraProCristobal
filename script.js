@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const certificationMap = {
     "01img.jpg": "Análisis y Desarrollo de Software (en curso)",
-    "02img.jpg": "Bootcamp MinTIC - Talento Tech - Unilibre",
+    "02img.jpg": "Bootcamp MinTIC-Talento Tech-Unilibre",
     "03img.jpg": "Daxus Latam Python en la Práctica",
     "04img.jpg": "Variables y Estructuras de Control en Python",
     "05img.jpg": "Estrategias Pedagógicas para el Desarrollo del Pensamiento",
@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!certTitleEl || !certImageEl) return;
 
   if (imgName) {
-    certImageEl.src = `assets/img/${imgName}`;
+    // 🔧 CORRECCIÓN: ruta correcta hacia la carpeta de imágenes
+    certImageEl.src = "assets/img/" + imgName;
+
     certTitleEl.textContent =
       customTitle || certificationMap[imgName] || "Certificación no encontrada";
   } else {
